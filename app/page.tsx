@@ -1,4 +1,4 @@
-import BooksButton from "@/shared/components/Books/BooksButton/BooksButton";
+import BooksButton from "@/shared/components/Books/BooksButton";
 import Head from "next/head";
 
 export default function Home() {
