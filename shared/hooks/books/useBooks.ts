@@ -9,7 +9,7 @@ export const useBooks = (): UseQueryResult<Book[] | null, Error> => {
     queryKey: ["books"],
     queryFn: async () => {
       try {
-        const response = await httpClient.get<Book[]>(`${environment.netutecaCoreUrl}/api/books`);
+        const response = await httpClient.get<Book[]>(`${environment.netutetaApiUrl}/api/books`);
         return response.data;
       } catch (error) {
         if (error instanceof HttpError) {

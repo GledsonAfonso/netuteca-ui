@@ -13,26 +13,43 @@ export default function BooksTable() {
     console.log(error);
   }
 
+  let headers: string[] = [];
+  if (isSuccess && books) {
+    headers = Object.keys(books[0]);
+  }
+
   return (
     <div>
-      {!isLoading && !isError && isSuccess && books ?
-        <table>
-          <tr>
-            {Object.keys(books[0]).map(bookHeader => (
-              <th>{bookHeader}</th>
-            ))}
-          </tr>
+      {isLoading ? <h2>Loading...</h2> : <></>}
 
-          {books.map(book => (
+      {isError ? <h2>Error!</h2> : <></>}
+
+      {isSuccess && books ?
+        <table>
+          <caption>
+            Books
+          </caption>
+
+          <thead>
             <tr>
-              {Object.values(book).map(value => (
-                <td>{value}</td>
+              {headers.map(bookHeader => (
+                <th key={bookHeader}>{bookHeader}</th>
               ))}
             </tr>
-          ))}
+          </thead>
+
+          <tbody>
+            {books.map(book => (
+              <tr key={book.id}>
+                {Object.values(book).map((value, index) => (
+                  <td key={`${book.id}-${headers[index]}-${value}`}>{value}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
         </table>
         :
-        <table></table>
+        <></>
       }
     </div>
   );
