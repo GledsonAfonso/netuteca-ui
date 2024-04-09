@@ -35,6 +35,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# environment variables
+.env.*
+!.env.example
+
 # misc
 package-lock.json
 yarn.lock
