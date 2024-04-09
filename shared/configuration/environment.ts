@@ -1,3 +1,3 @@
 export const environment = {
-  netutecaCoreUrl: process.env.NETUTECA_CORE_URL,
+  netutetaApiUrl: process.env.NEXT_PUBLIC_NETUTECA_API_URL,
 };
