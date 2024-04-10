@@ -1,4 +1,5 @@
 import { useBooks } from "@shared/hooks/books/useBooks";
+import "@pages/books/components/styles.css"
 
 export default function BooksTable() {
   const {
@@ -25,17 +26,11 @@ export default function BooksTable() {
       {isError ? <h2>Error!</h2> : <></>}
 
       {isSuccess && books ?
-        <table>
-          <caption>
-            Books
-          </caption>
-
+        <table className="books-table">
           <thead>
-            <tr>
-              {headers.map(bookHeader => (
-                <th key={bookHeader}>{bookHeader}</th>
-              ))}
-            </tr>
+            {headers.map(bookHeader => (
+              <th key={bookHeader}>{bookHeader}</th>
+            ))}
           </thead>
 
           <tbody>

@@ -19,7 +19,7 @@ export default function IconButton(props: ButtonProps) {
   } = props;
 
   return (
-    <button className={`${styles.button} ${styles.roundButton}`}>
+    <button className={`${styles.button} round`}>
       <a href={pagePath}>
         <Image src={imageSourcePath} alt={altText} width={imageWidth} height={imageHeight}></Image>
       </a>

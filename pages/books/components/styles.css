@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+  display: table-cell;
+}
+
+th, td {
+  box-sizing: border-box;
+  padding: 8px;
+  border-bottom: 1px solid;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+tr:hover {
+  background-color: cyan;
+}

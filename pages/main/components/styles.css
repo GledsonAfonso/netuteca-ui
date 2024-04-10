@@ -1,0 +1,13 @@
+.container {
+  padding: 50px;
+}
+
+.box {
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+}
+
+button {
+  vertical-align: top;
+}

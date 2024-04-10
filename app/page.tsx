@@ -1,4 +1,4 @@
-import BooksButton from "@shared/components/Books/BooksButton";
+import Main from "@pages/main/components/Main";
 import Head from "next/head";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </Head>
 
-      <BooksButton></BooksButton>
+      <Main></Main>
     </div>
   );
 }

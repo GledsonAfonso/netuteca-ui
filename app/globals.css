@@ -1,0 +1,25 @@
+:root {
+	--main-color: #EFBC9B;
+	--secondary-color: #FBF3D5;
+	--first-complementary-color: #D6DAC8;
+	--second-complementary-color: #9CAFAA;
+}
+
+html {
+	background-color: var(--main-color);
+}
+
+button {
+	background-color: var(--second-complementary-color);
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+	text-align: center;
+}
