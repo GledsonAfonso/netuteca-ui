@@ -1,5 +1,5 @@
-import IconButton from "@/shared/components/Button/IconButton";
-import bookIcon from "@/public/book.svg";
+import IconButton from "@shared/components/Button/IconButton";
+import bookIcon from "@public/book.svg";
 
 export default function BooksButton() {
   return (

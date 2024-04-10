@@ -1,4 +1,4 @@
-import BooksTable from "@/shared/components/Books/BooksTable";
+import BooksTable from "@shared/components/Books/BooksTable";
 
 export default function BooksPage() {
   return (

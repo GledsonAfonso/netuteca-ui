@@ -1,7 +1,7 @@
-import { environment } from "@/shared/configuration/environment";
-import type { Book } from "@/shared/types/books";
-import httpClient from "@/shared/utils/http/httpClient";
-import { HttpError } from "@/shared/utils/http/types";
+import { environment } from "@shared/configuration/environment";
+import type { Book } from "@shared/types/books";
+import httpClient from "@shared/utils/http/httpClient";
+import { HttpError } from "@shared/utils/http/types";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 
 export const useBooks = (): UseQueryResult<Book[] | null, Error> => {

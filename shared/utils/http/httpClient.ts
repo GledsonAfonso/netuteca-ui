@@ -1,5 +1,5 @@
-import type { HttpRequestConfig, HttpResponse } from "@/shared/utils/http/types";
-import { HttpError } from "@/shared/utils/http/types";
+import type { HttpRequestConfig, HttpResponse } from "@shared/utils/http/types";
+import { HttpError } from "@shared/utils/http/types";
 import type { AxiosError } from "axios";
 import axios from "axios";
 

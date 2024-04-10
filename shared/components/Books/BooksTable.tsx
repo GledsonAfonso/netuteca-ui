@@ -1,4 +1,4 @@
-import { useBooks } from "@/shared/hooks/books/useBooks";
+import { useBooks } from "@shared/hooks/books/useBooks";
 
 export default function BooksTable() {
   const {
