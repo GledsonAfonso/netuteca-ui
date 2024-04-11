@@ -28,9 +28,11 @@ export default function BooksTable() {
       {isSuccess && books ?
         <table className="books-table">
           <thead>
-            {headers.map(bookHeader => (
-              <th key={bookHeader}>{bookHeader}</th>
-            ))}
+            <tr className="ignore-hover-behavior">
+              {headers.map(bookHeader => (
+                <th key={bookHeader}>{bookHeader}</th>
+              ))}
+            </tr>
           </thead>
 
           <tbody>
