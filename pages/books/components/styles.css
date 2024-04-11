@@ -1,3 +1,5 @@
+@import url("@app/globals.css");
+
 table {
   border-collapse: collapse;
   display: table-cell;
@@ -11,7 +13,7 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: lightgrey;
+  background-color: var(--secondary-color);
 }
 
 tr:hover:not(.ignore-hover-behavior) {

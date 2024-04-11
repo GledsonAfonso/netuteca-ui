@@ -9,10 +9,6 @@ html {
 	background-color: var(--main-color);
 }
 
-button {
-	background-color: var(--second-complementary-color);
-}
-
 .round {
   border-radius: 50%;
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./styles.module.css";
+import styles from "@shared/components/Button/styles.module.css";
 
 type ButtonProps = {
   imageSourcePath: string;
