@@ -14,7 +14,7 @@ export default function Logo({
   imageHeight,
 }: LogoParams) {
   return (
-    <div className="center">
+    <div>
       <Image src={imageSourcePath} alt={altText} width={imageWidth} height={imageHeight}></Image>
     </div>
   );

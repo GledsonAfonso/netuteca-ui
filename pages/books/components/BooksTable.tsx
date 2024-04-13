@@ -24,9 +24,9 @@ export default function BooksTable() {
   }
 
   return (
-    <div className="center">
+    <div className="centered-container">
       {isSuccess && books ?
-        <table className="books-table">
+        <table>
           <thead>
             <tr className="ignore-hover-behavior">
               {headers.map(bookHeader => (

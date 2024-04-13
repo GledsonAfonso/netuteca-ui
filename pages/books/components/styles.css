@@ -19,3 +19,9 @@ tr:nth-child(even) {
 tr:hover:not(.ignore-hover-behavior) {
   background-color: var(--first-complementary-color);
 }
+
+.centered-container {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
