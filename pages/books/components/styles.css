@@ -7,13 +7,13 @@ table {
 
 th, td {
   box-sizing: border-box;
-  padding: 8px;
-  border-bottom: 1px solid;
+  padding: 0.5rem;
+  border-bottom: 0.07rem solid;
   text-align: left;
 }
 
 tr:nth-child(even) {
-  background-color: var(--secondary-color);
+  background-color: var(--main-color);
 }
 
 tr:hover:not(.ignore-hover-behavior) {

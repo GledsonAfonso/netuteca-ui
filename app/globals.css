@@ -6,7 +6,12 @@
 }
 
 html {
-	background-color: var(--main-color);
+	background-color: var(--secondary-color);
+	font-family: 'Gill Sans', sans-serif;
+}
+
+body {
+	margin: 0;
 }
 
 .round {
@@ -16,6 +21,6 @@ html {
 .center {
   margin: auto;
   width: 50%;
-  padding: 10px;
+  padding: 0.7rem;
 	text-align: center;
 }
