@@ -14,17 +14,17 @@ export default function BooksTable() {
     console.log(error);
   }
 
+  if(isLoading) {
+    console.log("Still loading...");
+  }
+
   let headers: string[] = [];
   if (isSuccess && books) {
     headers = Object.keys(books[0]);
   }
 
   return (
-    <div>
-      {isLoading ? <h2>Loading...</h2> : <></>}
-
-      {isError ? <h2>Error!</h2> : <></>}
-
+    <div className="center">
       {isSuccess && books ?
         <table className="books-table">
           <thead>

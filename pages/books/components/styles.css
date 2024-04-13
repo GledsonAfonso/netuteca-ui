@@ -17,5 +17,5 @@ tr:nth-child(even) {
 }
 
 tr:hover:not(.ignore-hover-behavior) {
-  background-color: cyan;
+  background-color: var(--first-complementary-color);
 }
