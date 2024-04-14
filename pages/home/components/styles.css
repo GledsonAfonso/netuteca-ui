@@ -1,24 +1,20 @@
 @import url("@app/globals.css");
 
-.image-container {
-  position: relative;
-  display: inline-block;
+img {
+  width: 30%;
+  height: 30%;
+  margin: auto;
+  padding: 0.7rem;
+  filter: invert(99%) sepia(17%) saturate(4652%) hue-rotate(297deg) brightness(98%) contrast(91%);
 }
 
-.image-container img {
-  display: block;
-  max-width: auto;
-  max-height: auto;
-  width: 100%;
-  height: 100%;
+.image-container {
+  text-align: center;
 }
 
 .main-text {
-  position: absolute;
-  top: 5%;
-  left: 50%;
   color: var(--main-color);
   padding: 1rem;
   font-size: 80px;
-  text-align: right;
+  text-align: center;
 }
