@@ -1,5 +1,7 @@
+import Home from "@pages/home/components/Home";
+
 export default function Main() {
   return (
-    <h1>Home page</h1>
+    <Home />
   );
 }
