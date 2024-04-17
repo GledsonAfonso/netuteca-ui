@@ -18,3 +18,25 @@ img {
   font-size: 80px;
   text-align: center;
 }
+
+.fade-in {
+  animation: fadeIn 5s;
+}
+
+.fade-in img {
+  animation-delay: 0s;
+}
+
+.fade-in.main-text {
+  animation-fill-mode: backwards;
+  animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

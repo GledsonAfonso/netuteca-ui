@@ -5,6 +5,7 @@ type LogoParams = {
   altText: string;
   imageWidth?: number;
   imageHeight?: number;
+  className?: string;
 };
 
 export default function Logo({
@@ -12,9 +13,10 @@ export default function Logo({
   altText,
   imageWidth = 1,
   imageHeight = 1,
+  className = "image-container",
 }: LogoParams) {
   return (
-    <div className="image-container">
+    <div className={className}>
       <Image src={imageSourcePath} alt={altText} width={imageWidth} height={imageHeight}></Image>
     </div>
   );
