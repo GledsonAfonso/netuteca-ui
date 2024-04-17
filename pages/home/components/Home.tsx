@@ -8,7 +8,7 @@ export default function Home() {
       <Logo
         imageSourcePath={bookLogo}
         altText="Logo"
-        className="image-container fade-in"
+        className="logo-container-home-page fade-in"
       />
 
       <div className="main-text fade-in">Feeling like reading something?</div>

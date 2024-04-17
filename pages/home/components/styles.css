@@ -1,6 +1,6 @@
 @import url("@app/globals.css");
 
-img {
+.logo-container-home-page img {
   width: 30%;
   height: 30%;
   margin: auto;
@@ -8,7 +8,7 @@ img {
   filter: invert(99%) sepia(17%) saturate(4652%) hue-rotate(297deg) brightness(98%) contrast(91%);
 }
 
-.image-container {
+.logo-container-home-page {
   text-align: center;
 }
 
