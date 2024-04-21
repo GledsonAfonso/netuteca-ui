@@ -1,5 +1,6 @@
+import "@pages/books/components/styles.css";
 import { useBooks } from "@shared/hooks/books/useBooks";
-import "@pages/books/components/styles.css"
+import { useState } from "react";
 
 export default function BooksTable() {
   const {
@@ -9,6 +10,15 @@ export default function BooksTable() {
     isLoading,
     isSuccess,
   } = useBooks();
+  const [pageIndex, setPageIndex] = useState(0);
+  
+  const handlesPreviousPageButtonClick = () => {
+    setPageIndex(pageIndex - 1);
+  };
+
+  const handlesNextPageButtonClick = () => {
+    setPageIndex(pageIndex + 1);
+  };
 
   if(isError) {
     console.log(error);
@@ -20,11 +30,11 @@ export default function BooksTable() {
 
   let headers: string[] = [];
   if (isSuccess && books) {
-    headers = Object.keys(books[0]);
+    headers = Object.keys(books.get(0)![0]);
   }
 
   return (
-    <div className="centered-container">
+    <div className="table-container">
       {isSuccess && books ?
         <table>
           <thead>
@@ -36,7 +46,7 @@ export default function BooksTable() {
           </thead>
 
           <tbody>
-            {books.map(book => (
+            {books.get(pageIndex)?.map(book => (
               <tr key={book.id}>
                 {Object.values(book).map((value, index) => (
                   <td key={`${book.id}-${headers[index]}-${value}`}>{value}</td>
@@ -48,6 +58,11 @@ export default function BooksTable() {
         :
         <></>
       }
+      <div className="page-index-container">
+        <button onClick={handlesPreviousPageButtonClick} className="page-index-button-left" disabled={pageIndex === 0}>{`<`}</button>
+        <div>{pageIndex + 1}</div>
+        <button onClick={handlesNextPageButtonClick} className="page-index-button-right" disabled={pageIndex === books?.size}>{`>`}</button>
+      </div>
     </div>
   );
 }

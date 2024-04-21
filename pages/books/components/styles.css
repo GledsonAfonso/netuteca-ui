@@ -20,8 +20,45 @@ tr:hover:not(.ignore-hover-behavior) {
   background-color: var(--first-complementary-color);
 }
 
-.centered-container {
+.table-container {
 	display: table;
 	margin-left: auto;
 	margin-right: auto;
+  display: block;
+}
+
+.page-index-container {
+  display: flex;
+}
+
+.page-index-container button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 3rem;
+  background-color: var(--main-color);
+}
+
+.page-index-button-left {
+  border-radius: 10% 0% 0% 10%;
+}
+
+.page-index-button-right {
+  border-radius: 0% 10% 10% 0%;
+}
+
+.page-index-container button:hover {
+  background-color: var(--first-complementary-color);
+}
+
+.page-index-container button:disabled {
+  background-color: var(--first-complementary-color);
+}
+
+.page-index-container div {
+  background-color: var(--first-complementary-color);
+  padding: 0.25rem; 
+  width: 2.5rem;
+  text-align: center;
 }
