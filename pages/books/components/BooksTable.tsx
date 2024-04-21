@@ -1,5 +1,6 @@
 import "@pages/books/components/styles.css";
 import { useBooks } from "@shared/hooks/books/useBooks";
+import { Book } from "@shared/types/books";
 import { useState } from "react";
 
 export default function BooksTable() {
@@ -11,6 +12,16 @@ export default function BooksTable() {
     isSuccess,
   } = useBooks();
   const [pageIndex, setPageIndex] = useState(0);
+
+  const handlesEditButtonClick = (book: Book) => {
+    console.log("edit button");
+    console.log(book);
+  };
+
+  const handlesRemoveButtonClick = (bookId: string) => {
+    console.log("remove button");
+    console.log(bookId);
+  };
   
   const handlesPreviousPageButtonClick = () => {
     setPageIndex(pageIndex - 1);
@@ -44,6 +55,7 @@ export default function BooksTable() {
                 {headers.map(bookHeader => (
                   <th key={bookHeader}>{bookHeader}</th>
                 ))}
+                <th key={"options"}></th>
               </tr>
             </thead>
 
@@ -53,6 +65,10 @@ export default function BooksTable() {
                   {Object.values(book).map((value, index) => (
                     <td key={`${book.id}-${headers[index]}-${value}`}>{value}</td>
                   ))}
+                  <td key={`${book.id}-options`}>
+                    <button onClick={() => handlesEditButtonClick(book)} className="edit-button">Edit</button>
+                    <button onClick={() => handlesRemoveButtonClick(book.id)} className="remove-button">Remove</button>
+                  </td>
                 </tr>
               ))}
             </tbody>

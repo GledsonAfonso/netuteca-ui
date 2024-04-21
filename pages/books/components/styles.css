@@ -42,6 +42,21 @@ tr:hover:not(.ignore-hover-behavior) {
   background-color: var(--first-complementary-color);
 }
 
+.edit-button, .remove-button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.edit-button:hover, .remove-button:hover {
+  background-color: var(--main-color);
+}
+
+.edit-button:active, .remove-button:active {
+  background-color: var(--second-complementary-color);
+}
+
 .page-index-container {
   display: flex;
 }
@@ -69,6 +84,10 @@ tr:hover:not(.ignore-hover-behavior) {
 
 .page-index-container button:disabled {
   background-color: var(--first-complementary-color);
+}
+
+.page-index-container button:active:not(:disabled) {
+  background-color: var(--second-complementary-color);
 }
 
 .page-index-container div {
