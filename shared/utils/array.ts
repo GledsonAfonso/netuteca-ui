@@ -13,10 +13,10 @@ export const getArrayInChunks = <T> ({
 
   const chunks = new Map<number, T[]>();
   
-  for (let index = 0; index <= chunkSize; index++) {
-    const indexStart = index * chunkSize;
-    const indexEnd = indexStart + chunkSize;
-    chunks.set(index, array.slice(indexStart, indexEnd));
+  for (let index = 0; index < array.length; index = index + chunkSize) {
+    const chunkIndex = index / chunkSize;
+    const indexEnd = index + chunkSize;
+    chunks.set(chunkIndex, array.slice(index, indexEnd));
   }
 
   return chunks;
