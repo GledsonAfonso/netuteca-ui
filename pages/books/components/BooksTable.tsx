@@ -63,7 +63,7 @@ export default function BooksTable() {
         <div className="page-index-container">
           <button onClick={handlesPreviousPageButtonClick} className="page-index-button-left" disabled={pageIndex === 0}>{`<`}</button>
           <div>{pageIndex + 1}</div>
-          <button onClick={handlesNextPageButtonClick} className="page-index-button-right" disabled={pageIndex === books?.size}>{`>`}</button>
+          <button onClick={handlesNextPageButtonClick} className="page-index-button-right" disabled={books ? (pageIndex === (books.size - 1)) : true}>{`>`}</button>
         </div>
       </div>
       <div className="lateral-box"></div>
