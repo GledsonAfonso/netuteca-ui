@@ -44,7 +44,7 @@ tr:hover:not(.ignore-hover-behavior) {
 
 .options-container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .edit-button, .remove-button {
