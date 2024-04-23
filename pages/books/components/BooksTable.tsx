@@ -69,16 +69,18 @@ export default function BooksTable() {
                     <td key={`${book.id}-${headers[index]}-${value}`}>{value}</td>
                   ))}
                   <td key={`${book.id}-options`}>
-                    <FontAwesomeIcon
-                      icon={faEdit}
-                      onClick={() => handlesEditButtonClick(book)}
-                      className="edit-button"
-                    />
-                    <FontAwesomeIcon
-                      icon={faRemove}
-                      onClick={() => handlesRemoveButtonClick(book.id)}
-                      className="remove-button"
-                    />
+                    <div className="options-container">
+                      <FontAwesomeIcon
+                        icon={faEdit}
+                        onClick={() => handlesEditButtonClick(book)}
+                        className="edit-button"
+                      />
+                      <FontAwesomeIcon
+                        icon={faRemove}
+                        onClick={() => handlesRemoveButtonClick(book.id)}
+                        className="remove-button"
+                      />
+                    </div>
                   </td>
                 </tr>
               ))}

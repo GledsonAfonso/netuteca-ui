@@ -42,12 +42,17 @@ tr:hover:not(.ignore-hover-behavior) {
   background-color: var(--first-complementary-color);
 }
 
+.options-container {
+  display: flex;
+  justify-content: end;
+}
+
 .edit-button, .remove-button {
   background: none;
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 1rem;
+  padding: .50rem;
 }
 
 .edit-button:hover, .remove-button:hover {
