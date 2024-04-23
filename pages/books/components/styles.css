@@ -47,6 +47,7 @@ tr:hover:not(.ignore-hover-behavior) {
   border: none;
   outline: none;
   box-shadow: none;
+  padding: 1rem;
 }
 
 .edit-button:hover, .remove-button:hover {

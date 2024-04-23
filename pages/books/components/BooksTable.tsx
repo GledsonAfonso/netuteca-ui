@@ -1,3 +1,6 @@
+import { faRemove } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@pages/books/components/styles.css";
 import { useBooks } from "@shared/hooks/books/useBooks";
 import { Book } from "@shared/types/books";
@@ -66,8 +69,16 @@ export default function BooksTable() {
                     <td key={`${book.id}-${headers[index]}-${value}`}>{value}</td>
                   ))}
                   <td key={`${book.id}-options`}>
-                    <button onClick={() => handlesEditButtonClick(book)} className="edit-button">Edit</button>
-                    <button onClick={() => handlesRemoveButtonClick(book.id)} className="remove-button">Remove</button>
+                    <FontAwesomeIcon
+                      icon={faEdit}
+                      onClick={() => handlesEditButtonClick(book)}
+                      className="edit-button"
+                    />
+                    <FontAwesomeIcon
+                      icon={faRemove}
+                      onClick={() => handlesRemoveButtonClick(book.id)}
+                      className="remove-button"
+                    />
                   </td>
                 </tr>
               ))}
