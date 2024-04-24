@@ -26,6 +26,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navbar />
 
       <Component {...pageProps} />
+      
+      <div id="modal-root"></div>
     </QueryClientProvider>
   );
 }
