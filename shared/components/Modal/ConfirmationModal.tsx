@@ -34,8 +34,8 @@ export const ConfirmationModal = ({
   };
 
   const modalContent = (
-    <div className="modal-overlay">
-      <div className="modal-wrapper">
+    <div className="modal-overlay" onClick={handleCloseClick}>
+      <div className="modal-wrapper" onClick={(event) => event.stopPropagation()}>
         <div className="modal">
           <div className="modal-header">
             <FontAwesomeIcon
