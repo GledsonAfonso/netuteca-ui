@@ -110,7 +110,9 @@ export default function BooksTable() {
         <ConfirmationModal
           title="Removing a book"
           text="You're about to delete a book. Are you sure?"
-          logo={<FontAwesomeIcon icon={faTimesCircle} />}
+          logo={faTimesCircle}
+          cancelButtonText="Cancel"
+          confirmButtonText="Confirm"
           onClose={() => setOpenRemoveConfirmationModal(false)}
           onConfirm={handlesRemoveBook}
         />}

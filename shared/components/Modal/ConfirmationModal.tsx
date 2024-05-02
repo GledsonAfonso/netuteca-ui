@@ -1,16 +1,28 @@
-import ReactDOM from "react-dom";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@shared/components/Modal/styles.css";
-import Logo from "@shared/components/Logo/Logo";
+import ReactDOM from "react-dom";
 
 type ConfirmationModalParams = {
   title: string;
   text: string;
-  logo: any;
+  logo: IconDefinition;
+  cancelButtonText: string;
+  confirmButtonText: string;
   onClose: () => void;
   onConfirm: () => Promise<void>;
 };
 
-export const ConfirmationModal = ({ title, text, logo, onClose, onConfirm }: ConfirmationModalParams) => {
+export const ConfirmationModal = ({
+  title,
+  text,
+  logo,
+  cancelButtonText,
+  confirmButtonText,
+  onClose,
+  onConfirm
+}: ConfirmationModalParams) => {
   const handleCloseClick = (event: any) => {
     event.preventDefault();
     onClose();
@@ -26,18 +38,23 @@ export const ConfirmationModal = ({ title, text, logo, onClose, onConfirm }: Con
       <div className="modal-wrapper">
         <div className="modal">
           <div className="modal-header">
-            <a href="#" onClick={handleCloseClick}>
-              x
-            </a>
+            <FontAwesomeIcon
+              icon={faX}
+              onClick={handleCloseClick}
+              className="modal-close-icon"
+            />
           </div>
           <div className="modal-body">
-            <div className="modal-logo">{logo}</div>
+            <FontAwesomeIcon
+              icon={logo}
+              className="modal-icon"
+            />
             <h1 className="modal-title">{title}</h1>
             <p className="modal-text">{text}</p>
           </div>
           <div className="modal-buttons">
-            <button className="modal-cancel-button" onClick={handleCloseClick}>No</button>
-            <button className="modal-confirmation-button" onClick={handleConfirmClick}>Yes</button>
+            <button className="modal-cancel-button" onClick={handleCloseClick}>{cancelButtonText}</button>
+            <button className="modal-confirmation-button" onClick={handleConfirmClick}>{confirmButtonText}</button>
           </div>
         </div>
       </div>
