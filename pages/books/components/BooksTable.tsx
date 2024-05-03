@@ -3,8 +3,8 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@pages/books/components/styles.css";
 import { ConfirmationModal } from "@shared/components/Modal/ConfirmationModal";
-import { useBooks } from "@shared/hooks/books/useBooks";
-import { Book } from "@shared/types/books";
+import { useAllBooks } from "@pages/books/hooks/useAllBooks";
+import { Book } from "@server/books/domain/types";
 import { useState } from "react";
 
 export default function BooksTable() {
@@ -14,7 +14,7 @@ export default function BooksTable() {
     isError,
     isLoading,
     isSuccess,
-  } = useBooks();
+  } = useAllBooks();
   const [pageIndex, setPageIndex] = useState(0);
   const [openRemoveConfirmationModal, setOpenRemoveConfirmationModal] = useState(false);
   const [bookId, setBookId] = useState("");
