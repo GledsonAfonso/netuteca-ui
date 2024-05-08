@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  pageExtensions: ["page.tsx", "api.ts"],
+};
 
 export default nextConfig;

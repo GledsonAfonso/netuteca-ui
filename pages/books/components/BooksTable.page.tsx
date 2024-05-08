@@ -1,7 +1,7 @@
 import { faRemove } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DeleteBookModal } from "@pages/books/components/DeleteBookModal";
+import { DeleteBookModal } from "@pages/books/components/DeleteBookModal.page";
 import "@pages/books/components/styles.css";
 import { useAllBooks } from "@pages/books/hooks/useAllBooks";
 import { Book } from "@server/books/domain/types";
