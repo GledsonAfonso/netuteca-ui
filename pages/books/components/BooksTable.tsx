@@ -1,8 +1,8 @@
-import { faRemove, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import { faRemove } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons/faEdit";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { DeleteBookModal } from "@pages/books/components/DeleteBookModal";
 import "@pages/books/components/styles.css";
-import { ConfirmationModal } from "@shared/components/Modal/ConfirmationModal";
 import { useAllBooks } from "@pages/books/hooks/useAllBooks";
 import { Book } from "@server/books/domain/types";
 import { useState } from "react";
@@ -19,17 +19,17 @@ export default function BooksTable() {
   const [openRemoveConfirmationModal, setOpenRemoveConfirmationModal] = useState(false);
   const [bookId, setBookId] = useState("");
 
-  const handlesEditButtonClick = (book: Book) => {
+  const openEditModal = (book: Book) => {
     console.log("edit button");
     console.log(book);
   };
 
-  const handlesRemoveButtonClick = (bookId: string) => {
+  const openRemoveModal = (bookId: string) => {
     setOpenRemoveConfirmationModal(true);
     setBookId(bookId);
   };
 
-  const handlesRemoveBook = async () => {
+  const closeRemoveModal = async () => {
     setOpenRemoveConfirmationModal(false);
     setBookId("");
   };
@@ -81,12 +81,12 @@ export default function BooksTable() {
                       <div className="options-container">
                         <FontAwesomeIcon
                           icon={faEdit}
-                          onClick={() => handlesEditButtonClick(book)}
+                          onClick={() => openEditModal(book)}
                           className="edit-button"
                         />
                         <FontAwesomeIcon
                           icon={faRemove}
-                          onClick={() => handlesRemoveButtonClick(book.id)}
+                          onClick={() => openRemoveModal(book.id)}
                           className="remove-button"
                         />
                       </div>
@@ -107,14 +107,9 @@ export default function BooksTable() {
         <div className="lateral-box"></div>
       </div>
       {openRemoveConfirmationModal &&
-        <ConfirmationModal
-          title="Removing a book"
-          text="You're about to delete a book. Are you sure?"
-          logo={faTimesCircle}
-          cancelButtonText="Cancel"
-          confirmButtonText="Confirm"
-          onClose={() => setOpenRemoveConfirmationModal(false)}
-          onConfirm={handlesRemoveBook}
+        <DeleteBookModal
+          bookId={bookId}
+          onClose={closeRemoveModal}
         />}
     </>
   );
