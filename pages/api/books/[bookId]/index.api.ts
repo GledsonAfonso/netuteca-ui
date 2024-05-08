@@ -9,7 +9,7 @@ const handler = (
     case "DELETE":
       return removeBookByIdHandler(req, res);
     default:
-      return res.status(404);
+      return res.status(404).end();
   }
 }
 
